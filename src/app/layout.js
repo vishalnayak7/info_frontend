@@ -15,7 +15,7 @@ const inter = Inter({ variable: "--font-inter", subsets: ["latin"] });
 const bebas = Bebas_Neue({ variable: "--font-Bebas", subsets: ["latin"], weight: "400" });
 
 export const metadata = {
-  title: "Pruthatek.info",
+  title: "PruthaTek.info",
   description: "This is the blogging site",
 };
 
