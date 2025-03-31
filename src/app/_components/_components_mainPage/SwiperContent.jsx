@@ -26,6 +26,7 @@ function SwiperContent() {
      const [activeIndex, setActiveIndex] = useState(0);
      const [swiperInstance, setSwiperInstance] = useState(null); // Store Swiper instance
 
+     
      const slides = useMemo(() => {
           return data?.HomePageSliderLeftSide?.map((_, index) => index) || [0];
      }, [data]);

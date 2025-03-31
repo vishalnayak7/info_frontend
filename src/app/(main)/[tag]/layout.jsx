@@ -1,3 +1,15 @@
+
+export async function generateStaticParams() {
+     // Fetch all available slugs from your database or API
+     const posts = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_API}/v1/blog/getStaticParams`, {
+          method: 'GET',
+     });
+
+     posts = await posts.json();
+
+     return posts.map(item => ({ slug: item?.slug }));
+}
+
 export async function generateMetadata({ params }) {
      // Format the title: remove hyphens and capitalize each word
 
@@ -7,7 +19,7 @@ export async function generateMetadata({ params }) {
                .map(word => word.charAt(0).toUpperCase() + word.slice(1))
                .join(' ');
 
-     const title = formatTitle((await params).slug);
+     const title = formatTitle((await params).tag);
 
      // Fetch product details (ensure `product` is defined)
      // const product = await fetchProductDetails(params.slug); // You need to define this function
@@ -18,9 +30,9 @@ export async function generateMetadata({ params }) {
           openGraph: {
                title: `${title} | PruthaTek.info`,
                description: "Read this insightful blog post.",
-               url: `https://pruthatek.info/blog/${(await params).slug}`,
+               url: `https://pruthatek.info/${(await params).tag}`,
                siteName: "PruthaTek.info",
-           
+
                type: "article",
                publishedTime: new Date().toISOString(),
                authors: ["PruthaTek"],
