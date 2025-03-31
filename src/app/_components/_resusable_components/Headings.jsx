@@ -1,6 +1,5 @@
-import React from 'react'
-
-export default function Headings({ title, subTitle, clx = '' }) {
+ 
+export default function Headings({ title, subTitle, clx = ' w-full' }) {
      return (
           <div className={clx}>
 

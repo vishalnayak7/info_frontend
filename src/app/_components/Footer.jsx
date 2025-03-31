@@ -33,10 +33,10 @@ export default function Footer() {
         {/* newslater */}
 
       </div>
-
+    
       <div className=" py-4 grid  grid-cols-2  lg:grid-cols-9  max-w-screen-2xl w-[87%] md:w-[85%] gap-10 lg:gap-12 xl:gap-20  mx-auto  ">
         <div className=' font-manrope col-span-1 lg:col-span-2 flex flex-col justify-start items-start'>
-          <h2 className=' font-bold text-[17px]  text-whiteish-500/50 pb-4 tracking-[0.05rem] '>Service</h2>
+          <h2 className=' font-bold text-[17px]  text-whiteish-500/50 pb-4 tracking-[0.05rem] '>Services</h2>
           <div className=' space-y-0.5 md:space-y-1'>
             {
               FooterData.service.map((item, index) => {
@@ -87,25 +87,18 @@ export default function Footer() {
 
           </div>
           <h2 className=' font-bold text-[17px]  text-whiteish-500/50 pb-4 tracking-[0.05rem]  pt-10'>Follow</h2>
-          <div className=' space-y-0.5 md:space-y-1 flex flex-col text-[15px]  md:text-[16px]   tracking-[0.03rem] hover:underline hover:text-colorFive duration-150 underline-offset-2   '>
+          <div className='  flex flex-row  gap-2  items-center '>
 
-            <div className=' flex flex-row items-center   gap-1'>
-              <FaXTwitter className=' w-5' />
+            <Link href={'https://twitter.com/pruthatek'} target='_blank' className={' flex flex-row items-center  gap-1'} >
+              <FaXTwitter className='   text-[17px]' />
+            </Link>
 
-              <a href="https://twitter.com/pruthatek" target='_blank' className='hf'>Twitter</a>
-            </div>
-            <div className=' flex flex-row items-center   gap-1'>
-
-              <FaLinkedinIn className=' w-5' />
-              <a href="https://www.linkedin.com/company/pruthatek/" target='_blank' className='hf'>LinkedIn</a>
-            </div>
-
-            <div className=' flex flex-row items-center   gap-1'>
-
-              <RiFacebookCircleFill  className='text-[19px] w-5' />
-
-              <a href="https://www.facebook.com/pruthatek/" target='_blank' className='hf'>Facebook</a>
-            </div>
+            <Link href={'https://www.linkedin.com/company/pruthatek/'} target='_blank' className={' flex flex-row items-center  gap-1'} >
+              <FaLinkedinIn className='  text-[18px]' />
+            </Link>
+            <Link href={'https://www.facebook.com/pruthatek/'} target='_blank' className={' flex flex-row items-center  gap-1'} >
+              <RiFacebookCircleFill className='text-[19px]  ' />
+            </Link>
 
 
 

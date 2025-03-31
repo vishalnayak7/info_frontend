@@ -20,7 +20,7 @@ export default function SponserdBlogsHome() {
 
      return (
           <>
-               <div className=' border-t border-dashed  border-blackish-300/50 dark:border-whiteish-300/50 pt-10 my-16'>
+               <div className=' border-t border-dashed  border-blackish-300/50 dark:border-whiteish-300/50 pt-10 mt-16 '>
 
                     <div className='  flex   flex-col lg:flex-row justify-between items-end  gap-5 lg:gap-3'>
                          <Headings title={'Top Recommended'} subTitle={'Handpicked Reads, Loved by Our Community'} />
@@ -40,7 +40,7 @@ export default function SponserdBlogsHome() {
                {
                     !isLoading && data?.HomePageSponserd_Blogs.length != 0 &&
 
-                    <div className='  w-full md:w-[80%] mx-auto lg:w-full grid mt-12  grid-cols-1  md:grid-cols-2 xl:grid-cols-4 gap-12 md:gap-8 xl:gap-6'>
+                    <div className='  w-full md:w-[80%] mx-auto lg:w-full grid   mt-4 grid-cols-1  md:grid-cols-2 xl:grid-cols-4 gap-12 md:gap-8 xl:gap-6'>
                          {
                               data?.HomePageSponserd_Blogs?.map((item, index) => {
                                    return (
