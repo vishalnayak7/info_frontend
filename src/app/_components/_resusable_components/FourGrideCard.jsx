@@ -8,7 +8,7 @@ import { timeAgo } from '@/app/utils/BasicFunctions'
 
 export default function FourGrideCard({ data }) {
      return (
-          <div
+          <Link href={'/blog/' + data?.slug}
                className=' group w-full  '
           >
                <div className='  rounded-md  aspect-[16/9] relative overflow-hidden'>
@@ -17,7 +17,7 @@ export default function FourGrideCard({ data }) {
                          <IImage url={data?.thumbnail} alt={data?.title} />
                     }
                </div>
-                    
+
                <div className=' pt-3 md:pt-4 flex flex-col justify-between h-[140px] md:h-[145px] items-start  '>
                     <Link href={'/blog/' + data?.slug} className=' line-clamp-3 font-manrope dark:font-semibold font-bold   text-blackish-600  group-hover:text-blueish-500 dark:text-whiteish-500    dark:group-hover:text-yellowish-500  text-[20px] md:text-[20px] dark:tracking-normal tracking-[-0.03rem] leading-[120%] md:leading-[125%] group-hover:underline group-hover:underline-offset-2 '>
                          {data?.title}
@@ -58,6 +58,6 @@ export default function FourGrideCard({ data }) {
                          </div>
                     </div>
                </div>
-          </div>
+          </Link>
      )
 }

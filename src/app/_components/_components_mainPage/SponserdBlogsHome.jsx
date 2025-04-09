@@ -24,8 +24,8 @@ export default function SponserdBlogsHome() {
 
                     <div className='  flex   flex-col lg:flex-row justify-between items-end  gap-5 lg:gap-3'>
                          <Headings title={'Top Recommended'} subTitle={'Handpicked Reads, Loved by Our Community'} />
-                         <div className='  text-blueish-500  dark:text-yellowish-500  text-[15px] md:text-[16px] flex flex-row items-center gap-2 capitalize font-medium font-manrope'>
-                              <BsStars className='   text-blueish-500  dark:text-yellowish-500 text-[17px] md:text-[20px] ' />  Sponsored Articles
+                         <div className='  text-blueish-500  dark:text-yellowish-500  text-[15px] md:text-[16px]    flex flex-row items-center gap-2 capitalize font-medium font-manrope'>
+                              <BsStars className='   text-blueish-500  dark:text-yellowish-500 text-[17px] md:text-[20px] ' />  <span className=' text-nowrap'>Sponsored Articles</span>
                          </div>
                     </div>
 

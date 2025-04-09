@@ -1,8 +1,7 @@
 
 
 import AuthoreSection from "./_components/_components_mainPage/AuthoreSection";
-import Categoryvise_blogs from "./_components/_components_mainPage/Categoryvise_blogs";
-import Four_blogs_grid from "./_components/_components_mainPage/Four_blogs_grid";
+
 import HomePage_BarOne_LatestBlogs from "./_components/_components_mainPage/HomePage_BarOne_LatestBlogs";
 import HomePage_BarOne_LikedBlogs from "./_components/_components_mainPage/HomePage_BarOne_LikedBlogs";
 import HomePage_BarOne_ViewBased from "./_components/_components_mainPage/HomePage_BarOne_ViewBased";
@@ -24,7 +23,7 @@ export default function Home() {
         {/* 
         <Categoryvise_blogs />
         */}
-        
+          
         <HomePage_BarOne_LikedBlogs/>
         <HomePage_BarOne_ViewBased/>
         <HomePage_BarOne_LatestBlogs />
