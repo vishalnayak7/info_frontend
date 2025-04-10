@@ -83,7 +83,7 @@ export default function BlogsSection({ data, isLoading, error, slug }) {
                }
 
                {/* // for mobil and tabs */}
-               <RelatedBlogs_Section />
+               <RelatedBlogs_Section  slug={slug} />
           </div>
      )
 }

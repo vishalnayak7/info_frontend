@@ -6,16 +6,18 @@ import From_following_card from './singleCards/From_following_card'
 import Skeleton from '@/app/_components/_resusable_components/Skeleton'
 import { useQuery } from '@tanstack/react-query'
 import { gqlClient } from '@/app/_components/Wrapper'
-import { GET_TOP_BLOGS_BY_TOP_AUTHOR } from '@/app/utils/graphql/apis_gql'
+import {  GetTopBlogsByTopAuthor } from '@/app/utils/graphql/apis_gql'
 
 export default function Following_s_blogs() {
 
+
      const { data, isLoading, error } = useQuery({
-          queryKey: ["GET_TOP_BLOGS_BY_TOP_AUTHOR"],
-          queryFn: () => gqlClient.request(GET_TOP_BLOGS_BY_TOP_AUTHOR, { username: ["Pruthatek", "DHIRAJ SUTHAR", "dcode"] }),
+          queryKey: ["GetTopBlogsByTopAuthor"],
+          queryFn: () => gqlClient.request(GetTopBlogsByTopAuthor),
      });
 
-   
+
+
 
      return (
           <div className=' border-t border-dashed  pb-10    border-blackish-300/50 dark:border-whiteish-300/50   w-full   mx-auto lg:w-full'>
@@ -35,7 +37,7 @@ export default function Following_s_blogs() {
                          }
                     </div>
                }
- 
+
           </div>
      )
 }

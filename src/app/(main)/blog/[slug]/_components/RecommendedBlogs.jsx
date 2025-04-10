@@ -1,27 +1,28 @@
 import Headings from '@/app/_components/_resusable_components/Headings'
- 
+
 import Reccomended_card from './singleCards/Reccomended_card'
 import From_following_card from './singleCards/From_following_card'
 import Skeleton from '@/app/_components/_resusable_components/Skeleton'
 import { useQuery } from '@tanstack/react-query';
-import { HP_BAR_THREE_LIKES_BAR } from '@/app/utils/graphql/homepage_gql';
+
 import { gqlClient } from '@/app/_components/Wrapper';
-import { GET_TOP_BLOGS_BY_TOP_AUTHOR } from '@/app/utils/graphql/apis_gql';
+import { GetRelatedBlogsBySlug } from '@/app/utils/graphql/apis_gql';
 
-export default function RecommendedBlogs() {
+export default function RecommendedBlogs({ slug }) {
 
-      const { data, isLoading, error } = useQuery({
-                 queryKey: ["GET_TOP_BLOGS_BY_TOP_AUTHOR"],
-                 queryFn: () => gqlClient.request(GET_TOP_BLOGS_BY_TOP_AUTHOR, { username: ["Pruthatek", "DHIRAJ SUTHAR", "dcode"] }),
-            });
-       
+     const { data, isLoading, error } = useQuery({
+          queryKey: ["GetRelatedBlogsBySlug"],
+          queryFn: () => gqlClient.request(GetRelatedBlogsBySlug, { slug: slug }),
+          enabled: !!slug,
+     });
+
      
-     
+
      return (
           <div className=' border-t border-dashed      border-blackish-300/50 dark:border-whiteish-300/50   w-full   mx-auto lg:w-full'>
-              
-                 <Headings title={' Related Articles'} subTitle={'Discover more articles you may like.'} clx=' mt-10' />
-               
+
+               <Headings title={' Related Articles'} subTitle={'Discover more articles you may like.'} clx=' mt-10' />
+
 
 
                {isLoading ?
@@ -29,7 +30,7 @@ export default function RecommendedBlogs() {
                     :
                     <div className=' w-full   grid mt-12  grid-cols-1  md:grid-cols-1 xl:grid-cols-2 gap-10 md:gap-8 xl:gap-10 xl:gap-y-12'>
                          {
-                              data?.getTopBlogsByTopAuthor?.map((item, index) => {
+                              data?.getRelatedBlogsBySlug?.map((item, index) => {
                                    return (
                                         <From_following_card key={index} data={item} />
                                    )
@@ -39,7 +40,7 @@ export default function RecommendedBlogs() {
                }
 
 
- 
+
           </div>
      )
 }

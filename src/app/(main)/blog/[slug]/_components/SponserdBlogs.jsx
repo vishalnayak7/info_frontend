@@ -3,23 +3,21 @@
 import React from 'react'
 import { BsStars } from "react-icons/bs";
  
-import { HP_SPONSERD_BLOGS } from '@/app/utils/graphql/homepage_gql';
+ 
 import { useQuery } from '@tanstack/react-query';
 import { gqlClient } from '@/app/_components/Wrapper';
 import From_following_card from './singleCards/From_following_card';
 import Skeleton from '@/app/_components/_resusable_components/Skeleton';
-import { GET_TOP_BLOGS_BY_TOP_AUTHOR } from '@/app/utils/graphql/apis_gql';
+import { GetTopBlogsByTopAuthor } from '@/app/utils/graphql/apis_gql';
 // import LoadingUI from './LoadingUI';
 
 export default function SponserdBlogs() {
 
      const { data, isLoading, error } = useQuery({
-            queryKey: ["GET_TOP_BLOGS_BY_TOP_AUTHOR"],
-            queryFn: () => gqlClient.request(GET_TOP_BLOGS_BY_TOP_AUTHOR, { username: ["Pruthatek", "DHIRAJ SUTHAR", "dcode"] }),
+            queryKey: ["GetTopBlogsByTopAuthor"],
+            queryFn: () => gqlClient.request(GetTopBlogsByTopAuthor),
        });
-  
-
-
+   
      return (
           <div className='   pb-10 mt-10 md:mt-0    border-blackish-300/50 dark:border-whiteish-300/50   w-full   mx-auto lg:w-full'>
                <div className=' '>

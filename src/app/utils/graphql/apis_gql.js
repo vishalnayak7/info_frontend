@@ -33,27 +33,7 @@ query GetRandomBlogsFooterBlogs {
 `;
 
 
-
-export const GET_TOP_BLOGS_BY_TOP_AUTHOR = gql`
-query GetTopBlogsByTopAuthor($username: [String]) {
-  getTopBlogsByTopAuthor(username: $username) {
-    _id
-    author {
-      
-      _id
-      avatar
-      username
-      bio
-    }
-    createdAt
-    slug
-    thumbnail
-    timeRequired
-    title
-  }
-}
-`;
-
+ 
 
 
 export const GetRandom = gql`
@@ -80,8 +60,6 @@ query GetRandom {
 }
 
 `;
-
-
 
 export const BLOG_BY_SLUG = gql`
 query blogBySlug($slug: String!) {
@@ -123,3 +101,84 @@ query blogBySlug($slug: String!) {
 }
 
 `;
+
+/// new builided
+export const GetRelatedBlogsBySlug = gql`
+query GetRelatedBlogsBySlug($slug: String!) {
+  getRelatedBlogsBySlug(slug: $slug) {
+    title
+    timeRequired
+    thumbnail
+    slug
+    createdAt
+    _id
+    author {
+      _id
+      username
+      slug
+      bio
+      avatar
+      followers
+    }
+  }
+}
+`;
+
+
+// give array of Ids
+export const GetTopBlogsByTopAuthor = gql`
+query GetTopBlogsByTopAuthor{
+  getTopBlogsByTopAuthor {
+    _id
+    author {
+      _id
+      avatar
+      bio
+      slug
+      followers
+      username
+    }
+    createdAt
+    title
+    timeRequired
+    thumbnail
+    slug
+  }
+}
+
+`;
+
+export const GetUserBySlug = gql`
+query GetUserBySlug($slug: String!) {
+  getUserBySlug(slug: $slug) {
+    bio
+    slug
+    username
+    TotalFollowers
+    TotalFollowing
+    _id
+    country
+    email
+    avatar
+  }
+}
+`;
+export const GetBlogsBySlugOfUser = gql`
+query GetBlogsBySlugOfUser($slug: String!, $page: Int, $limit: Int) {
+  getBlogsBySlugOfUser(slug: $slug, page: $page, limit: $limit) {
+    blog {
+      _id
+      title
+      createdAt
+      timeRequired
+      slug
+      thumbnail
+    }
+    limit
+    page
+    totalCount
+    totalPages
+  }
+}
+`;
+

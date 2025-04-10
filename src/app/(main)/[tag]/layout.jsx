@@ -1,7 +1,7 @@
 
 export async function generateStaticParams() {
      // Fetch all available slugs from your database or API
-     const posts = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_API}/v1/blog/getStaticParams`, {
+     let posts = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_API}/v1/blog/getStaticParams`, {
           method: 'GET',
      });
 
