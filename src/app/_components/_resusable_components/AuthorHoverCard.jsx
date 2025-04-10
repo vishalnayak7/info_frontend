@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 
 export default function AuthorHoverCard({ id, clx, data }) {
@@ -8,7 +9,7 @@ export default function AuthorHoverCard({ id, clx, data }) {
                <div className=" flex flex-row justify-between items-end">
 
                     <div className='bg-blackish-200/20  rounded-full overflow-hidden relative   md:size-[50px]'>
-                    
+
                          {data?.avatar && (
                               <Image
                                    quality={5}
@@ -20,7 +21,7 @@ export default function AuthorHoverCard({ id, clx, data }) {
                                    className="object-cover"
                               />
                          )}
- 
+
 
                     </div>
 
@@ -28,7 +29,7 @@ export default function AuthorHoverCard({ id, clx, data }) {
 
                </div>
 
-               <h3 className=" mt-2 font-manrope text-blackish-700 font-semibold text-[19px]">{data?.username}</h3>
+               <Link href={'/profile/' + data?.username} className=" pt-2 hover:underline block font-manrope text-blackish-700 font-semibold text-[19px]">{data?.username}</Link>
                <p className=" mt-2 text-black/60     font-manrope text-[15px]"> {data?.followers} <span className=" text-[14px]"> followers</span> </p>
                <p className=" tracking-[-0.02rem] dark:tracking-normal  line-clamp-3 text-[15px] leading-[130%] font-manrope   mt-2 text-black/80">{data?.bio}</p>
           </div>

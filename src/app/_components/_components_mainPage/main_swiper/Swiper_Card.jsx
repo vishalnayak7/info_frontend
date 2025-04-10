@@ -1,11 +1,11 @@
- 
+
 import Link from "next/link";
 import IImage from "../../_resusable_components/IImage";
 
 
 export default function Swiper_Card({ data }) {
   return (
-    <Link href={'/blog/' + data?.slug}  className=' group relative  block  w-full h-full rounded-lg overflow-hidden  dark:bg-blackish-500 bg-whiteish-500 lg:bg-black'>
+    <Link href={'/blog/' + data?.slug} className=' group relative  block  w-full h-full rounded-lg overflow-hidden  dark:bg-blackish-500 bg-whiteish-500 lg:bg-black'>
 
       <div className='  relative w-full  aspect-[16/9] lg:aspect-auto  lg:h-[95%] z-0 '>
         {data?.thumbnail &&
@@ -20,7 +20,8 @@ export default function Swiper_Card({ data }) {
         <p className=" md:hidden  tracking-[-0.03rem]       font-sourceSarif leading-[135%] text-[16px]    line-clamp-3     text-blackish-200 dark:text-whiteish-700">{data?.subTitle}</p>
 
         <div className=' mt-4  group/auth dark:text-whiteish-500  font-manrope space-x-1 clear-start text-black md:text-white text-[13px] md:text-[16px]'>
-          <span>by </span> <span className='  group-hover/auth:underline underline-offset-2 text-[14px] md:text-[17px] font-bold tracking-[-0.003rem]'>{data?.authorDetails?.username}</span>
+          <span>by </span>
+          <Link href={'/profile/' + data?.authorDetails?.username} className='  group-hover/auth:underline underline-offset-2 text-[14px] md:text-[17px] font-bold tracking-[-0.003rem]'>{data?.authorDetails?.username}</Link>
         </div>
       </div>
 

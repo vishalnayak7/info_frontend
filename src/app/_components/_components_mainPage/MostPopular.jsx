@@ -1,4 +1,4 @@
- 
+
 import Link from 'next/link'
 import React from 'react'
 import IImage from '../_resusable_components/IImage'
@@ -15,16 +15,20 @@ export default function MostPopular({ data }) {
                     {
                          data?.map((item, index) => {
                               return (
-                                   <Link key={index} href={'/blog/'+item?.slug} className=' flex flex-row justify-between border-blackish-200 items-start border-b border-dashed pb-3  group'>
+                                   <Link key={index} href={'/blog/' + item?.slug} className=' flex flex-row justify-between border-blackish-200 items-start border-b border-dashed pb-3  group'>
                                         <div className=' w-[75%] '>
 
                                              <h3 className=' group-hover:underline underline-offset-2 line-clamp-2 leading-[130%] font-manrope  dark:text-whiteish-400 group-hover:text-blueish-500 dark:group-hover:text-yellowish-500 text-[15px] md:text-[17px] font-bold md:font-semibold'>{item.title}
                                              </h3>
 
                                              <h4 className=' dark:text-whiteish-500 mt-2 leading-[130%] font-manrope text-blackish-600 text-[13px] md:text-[15px] font-semibold text-grayish-500 space-x-1.5'>
-                                                  <span className=' font-normal tracking-wide'>by</span> {item?.authorDetails?.username}</h4>
+                                                  <span className=' font-normal tracking-wide'>by</span>
+                                                  <Link href={'/profile/' + item?.authorDetails?.usernamex}>
+                                                       {item?.authorDetails?.username}
+                                                  </Link>
+                                             </h4>
                                         </div>
-
+                                   
 
                                         <div className=' relative overflow-hidden h-[63px] md:h-[70px] w-[90px] '>
 
@@ -32,7 +36,7 @@ export default function MostPopular({ data }) {
                                                   {index >= 10 ? index + 1 : `0${index + 1}`}
                                              </div>
 
-                                             <IImage url={item?.thumbnail} quality={15}   alt={item?.title} />
+                                             <IImage url={item?.thumbnail} quality={15} alt={item?.title} />
                                         </div>
                                    </Link>
                               )
