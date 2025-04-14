@@ -1,6 +1,22 @@
 import { gql } from "graphql-request";
 
 
+export const GET_DROPDOWN_BLOGS = gql`
+ query NavbarDropDown($tags: [String]) {
+  navbarDropDown(tags: $tags) {
+    _id
+    name
+    data {
+      _id
+      name
+      blogs {
+        slug
+        title
+      }
+    }
+  }
+}
+`;
 
 export const GET_POKEMONS = gql`
   query GetPokemons {
@@ -33,7 +49,7 @@ query GetRandomBlogsFooterBlogs {
 `;
 
 
- 
+
 
 
 export const GetRandom = gql`

@@ -19,7 +19,7 @@ export default function RecommendedBlogs({ slug }) {
      
 
      return (
-          <div className=' border-t border-dashed      border-blackish-300/50 dark:border-whiteish-300/50   w-full   mx-auto lg:w-full'>
+          <div className=' border-t border-dashed    pb-10   border-blackish-300/50 dark:border-whiteish-300/50   w-full   mx-auto lg:w-full'>
 
                <Headings title={' Related Articles'} subTitle={'Discover more articles you may like.'} clx=' mt-10' />
 

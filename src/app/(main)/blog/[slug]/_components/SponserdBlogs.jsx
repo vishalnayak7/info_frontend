@@ -1,9 +1,9 @@
 "use client"
- 
+
 import React from 'react'
 import { BsStars } from "react-icons/bs";
- 
- 
+
+
 import { useQuery } from '@tanstack/react-query';
 import { gqlClient } from '@/app/_components/Wrapper';
 import From_following_card from './singleCards/From_following_card';
@@ -14,10 +14,12 @@ import { GetTopBlogsByTopAuthor } from '@/app/utils/graphql/apis_gql';
 export default function SponserdBlogs() {
 
      const { data, isLoading, error } = useQuery({
-            queryKey: ["GetTopBlogsByTopAuthor"],
-            queryFn: () => gqlClient.request(GetTopBlogsByTopAuthor),
-       });
-   
+          queryKey: ["GetTopBlogsByTopAuthor"],
+          queryFn: () => gqlClient.request(GetTopBlogsByTopAuthor),
+     });
+
+
+
      return (
           <div className='   pb-10 mt-10 md:mt-0    border-blackish-300/50 dark:border-whiteish-300/50   w-full   mx-auto lg:w-full'>
                <div className=' '>
@@ -36,9 +38,13 @@ export default function SponserdBlogs() {
                     <div className=' w-full space-y-8 mt-8'>
                          {
                               data?.getTopBlogsByTopAuthor?.map((item, index) => {
-                                   return (
-                                        <From_following_card key={index} data={item} />
-                                   )
+                                   if (index > 3) {
+                                        return null
+                                   } else {
+                                        return (
+                                             <From_following_card key={index} data={item} />
+                                        )
+                                   }
                               })
                          }
                     </div>

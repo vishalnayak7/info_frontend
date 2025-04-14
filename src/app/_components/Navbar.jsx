@@ -7,6 +7,9 @@ import MainNav_sideButton from "./_components_navbar/MainNav_sideButton";
 import { useDispatch, useSelector } from "react-redux";
 import { setUserLoginDetails, setUserLoginStatus } from "../utils/Redux/slices/HomePage.slice";
 import Image from "next/image";
+import { useQuery } from "@tanstack/react-query";
+import { GET_DROPDOWN_BLOGS } from "../utils/graphql/apis_gql";
+import { gqlClient } from "./Wrapper";
 
 
 export default function Navbar() {
@@ -14,8 +17,11 @@ export default function Navbar() {
   const [dropData, setDropData] = useState('');
   const [showSearch, setShowSearch] = useState(false);
 
+
+  //  -- -------------    AUTHENTICATION CHECKING --------------- 
   const dispatch = useDispatch();
   const { is_user_logged_in, user_data } = useSelector(state => state.HomeSlice)
+
   async function checkToken() {
 
     let token = window.localStorage.getItem('PruthatekINFO_token');
@@ -56,6 +62,7 @@ export default function Navbar() {
     }
 
   }
+
   useEffect(() => {
     if (!is_user_logged_in) {
       checkToken();
@@ -73,11 +80,22 @@ export default function Navbar() {
   };
 
 
+
+
+
+  //  ---------------    DROPDOWN DATA FETCHING --------------- 
+  const { data, isLoading, error } = useQuery({
+    queryKey: ["GET_DROPDOWN_BLOGS"],
+    queryFn: () => gqlClient.request(GET_DROPDOWN_BLOGS, {
+      tags: ["Trending", "AI", "Entertainment", "Tech", "Homes", "Education", "Money", "Wellness", "Home", "Deals", "Gift Guide", "Cover Stories"]
+    }),
+  });
+
   return (
     <div onMouseLeave={handleMouseLeave} className=" w-full    sticky  top-0 z-[200]">
 
-    
-      <div className=" w-full  relative z-[999]    bg-blackish-500 text-whiteish-400  ">
+
+      <div className=" w-full  relative z-[999] bg-blackish-500  dark:bg-black/60  backdrop-blur-md  md:dark:bg-blackish-500  md:bg-blackish-500 text-whiteish-400  ">
 
         <div onMouseEnter={handleMouseLeave} className=" py-3    max-w-screen-2xl w-[87%] md:w-[85%] flex flex-row items-center justify-between mx-auto  ">
           <Link href="/" className=" font-manrope text-xl flex flex-row items-center">
@@ -97,16 +115,15 @@ export default function Navbar() {
         <div onMouseEnter={handleMouseEnter} className="py-2.5 hidden   max-w-screen-2xl   w-[87%] md:w-[85%]  lg:flex flex-row justify-between  mx-auto  overflow-auto ">
 
           {
-            Navlinks_data.map((item, index) => (
+            data?.navbarDropDown?.map((item, index) => (
               <Link
                 key={index}
-                href={item.href}
+                href={`/${item.name.toLowerCase().replace(/ /g, '-')}`}
                 onMouseEnter={() => { setDropData(item) }}
                 className={` text-nowrap font-semibold tracking-[0.01rem] text-[12px] lg:text-[14px]  xl:text-[16px]   font-nunito  ${item.cls}`}>
                 {item.name}</Link>
             ))
           }
-
 
         </div>
 
@@ -114,7 +131,7 @@ export default function Navbar() {
       </div>
 
 
-      <DropDown setIsOpen={setIsOpen} isOpen={isOpen} dropData={dropData} handleMouseLeave={handleMouseLeave} />
+      <DropDown setIsOpen={setIsOpen} isLoading={isLoading} isOpen={isOpen} dropData={dropData} handleMouseLeave={handleMouseLeave} />
 
 
     </div >

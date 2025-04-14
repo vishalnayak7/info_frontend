@@ -9,15 +9,18 @@ export default function RelatedBlogs_Section({ slug }) {
      return (
           <>
                {
-                    typeof window !== "undefined" && window?.innerWidth > 880 ? "" :
+                    typeof window !== "undefined" && window?.innerWidth > 880 ? <>
+     
+                         <RecommendedBlogs slug={slug} />
+                    </> :
                          <>
                               <SponserdBlogs />
+                              <RecommendedBlogs slug={slug} />
                               <Authors />
                               <Following_s_blogs />
                          </>
 
                }
-               <RecommendedBlogs slug={slug} />
           </>
      )
 }
