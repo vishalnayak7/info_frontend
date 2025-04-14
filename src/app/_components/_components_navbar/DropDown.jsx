@@ -46,7 +46,7 @@ export default function DropDown({ setIsOpen, isOpen, dropData, handleMouseLeave
                                                             item?.blogs?.map((b, i) => {
                                                                  return (
                                                                       <div key={i} className=" w-full  leading-[110%] relative flex justify-between flex-row">
-                                                                           <Link href="/blog/slug-s-sdfas-sd" className="font-semibold hover:underline hover:underline-offset-2 line-clamp-2  w-[93%]   text-black/60 text-[16px] font-manrope ">
+                                                                           <Link href={"/blog/" + b.slug} className="font-semibold hover:underline hover:underline-offset-2 line-clamp-2  w-[93%]   text-black/60 text-[16px] font-manrope ">
                                                                                 {b.title}
                                                                            </Link>
                                                                            <ArrowUpRight size={20} className="" />
