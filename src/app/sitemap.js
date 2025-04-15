@@ -45,7 +45,7 @@ export default async function sitemap() {
           const isValidDate = !isNaN(publishedAt.getTime()); // Ensure the date is valid
 
           return {
-               url: `https://pruthatek.info/${post.name}`,
+               url: `https://pruthatek.info/${String(post?.name).toLowerCase().replace(/ /g, '-')}`,
                lastModified: isValidDate ? publishedAt.toISOString() : new Date().toISOString(),
                priority: 0.8
           };

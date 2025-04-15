@@ -11,6 +11,7 @@ import AuthorHoverCard from '@/app/_components/_resusable_components/AuthorHover
 import { BsStars } from 'react-icons/bs';
 import MainSwiper from './_components/MainSwiper';
 import SponserdBlogs from './_components/SponserdBlogs';
+import LatestBlogsByTag from './_components/LatestBlogsByTag';
 
 // Tags data moved outside the component
 const Tags_data = [
@@ -31,34 +32,18 @@ const Tags_data = [
 
 export default function Page() {
      const { tag } = useParams();
-     const [TAG, setTAG] = useState(Tags_data[0]);
-
-     useEffect(() => {
-          if (!tag) return;
-
-          const formattedTag = `/${tag}`; // Ensure it has a leading slash
-          const foundTag = Tags_data.find(item => item.href === formattedTag);
-
-          if (foundTag) {
-               setTAG(foundTag);
-          }
-
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-
-     }, [tag]); // Runs when `tag` changes
-
-
-
+  
      return (
           <div className="w-full">
                <div className="max-w-screen-2xl gap-10 lg:gap-28 py-10 md:py-16 w-[87%] md:w-[70%] lg:w-[85%] mx-auto">
-                    <Headings clx=" " title={TAG?.heading} subTitle={TAG?.discription} />
- 
-                    <MainSwiper />
- 
+                    <Headings clx=" " title={String(tag).toLocaleLowerCase().replace(/-/g, " ")} subTitle={""} />
+
+                    <MainSwiper tag={tag} />
+          
                     <ExploreNow data={Tags_data} />
 
-                    <SponserdBlogs />
+                    <LatestBlogsByTag tag={tag}/>
+                    <SponserdBlogs tag={tag}/>
                </div>
           </div>
      );

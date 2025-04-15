@@ -116,12 +116,11 @@ export default function Navbar() {
 
           {
             data?.navbarDropDown?.map((item, index) => (
-              <Link
+              <div
                 key={index}
-                href={`/${item.name.toLowerCase().replace(/ /g, '-')}`}
                 onMouseEnter={() => { setDropData(item) }}
-                className={` text-nowrap font-semibold tracking-[0.01rem] text-[12px] lg:text-[14px]  xl:text-[16px]   font-nunito  ${item.cls}`}>
-                {item.name}</Link>
+                className={` text-nowrap cursor-pointer font-semibold tracking-[0.01rem] text-[12px] lg:text-[14px]  xl:text-[16px]   font-nunito  ${item.cls}`}>
+                {item.name}</div>
             ))
           }
 
