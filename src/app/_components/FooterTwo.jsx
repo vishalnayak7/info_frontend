@@ -24,15 +24,13 @@ export default function FooterTwo() {
 
                     </div>
 
-                    <div className=' flex flex-row  items-center  gap-1 md:gap-3'>
+                    <div className=' flex flex-row  items-center  '>
                          <p className='text-[11px] md:text-[15px]'>Desgin and Developed by</p>
                          <Link href={'https://pruthatek.com/'} className='  hover:bg-black px-1 rounded-md flex flex-row items-center  '>
-                              <div className=' inline-block  relative   w-[11px] md:w-[13px]  h-[10px] md:h-[12px] '>
-                                   <Image src={'/images/footerLogo.png'} alt='Pruthatek' fill className=' w-full h-full' />
+                              <div className=' inline-block  relative   w-[100px] md:w-[140px]  h-[9px] md:h-[12px] '>
+                                   <Image src={'/images/Pruthatekinfologo.png'} alt='Pruthatek' fill className=' w-full h-full' />
                               </div>
-                              <span className='gradient-text pl-[1px] text-[12px] uppercase  font-bold md:text-[15px]'>
-                                   ruthatek.com
-                              </span>
+                           
                          </Link>
                     </div>
 

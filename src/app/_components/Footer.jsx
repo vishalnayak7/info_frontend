@@ -22,18 +22,15 @@ export default function Footer() {
 
 
         <Link href="/" className=" font-manrope text-xl flex flex-row items-center">
-          <div className=" relative w-4 h-[15px] bottom-[-0.5px] right-[0.5px] ">
-            <Image src="/images/footerLogo.png" fill className=" w-full h-full" alt="Pruthatek" />
+          <div className=" relative w-[170px]  h-[15px] md:w-[210px]  md:h-[18px] bottom-[-0.5px] right-[0.5px] ">
+            <Image src="/images/Pruthatekinfologo.png" fill className=" w-full h-full" alt="Pruthatek" />
           </div>
-          <span className=" uppercase gradient-text leading-none   font-medium">
-            ruthatek.info
-          </span>
         </Link>
 
         {/* newslater */}
 
       </div>
-    
+
       <div className=" py-4 grid  grid-cols-2  lg:grid-cols-9  max-w-screen-2xl w-[87%] md:w-[85%] gap-10 lg:gap-12 xl:gap-20  mx-auto  ">
         <div className=' font-manrope col-span-1 lg:col-span-2 flex flex-col justify-start items-start'>
           <h2 className=' font-bold text-[17px]  text-whiteish-500/50 pb-4 tracking-[0.05rem] '>Services</h2>

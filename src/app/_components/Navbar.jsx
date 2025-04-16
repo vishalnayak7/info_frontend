@@ -99,12 +99,9 @@ export default function Navbar() {
 
         <div onMouseEnter={handleMouseLeave} className=" py-3    max-w-screen-2xl w-[87%] md:w-[85%] flex flex-row items-center justify-between mx-auto  ">
           <Link href="/" className=" font-manrope text-xl flex flex-row items-center">
-            <div className=" relative w-4 h-[15px] bottom-[-0.5px] right-[0.5px] ">
-              <Image src="/images/footerLogo.png" fill className=" w-full h-full" alt="Pruthatek" />
+            <div className=" relative w-[170px]  h-[15px] md:w-[210px]  md:h-[18px] bottom-[-0.5px] right-[0.5px] ">
+              <Image src="/images/Pruthatekinfologo.png" fill className=" w-full h-full" alt="Pruthatek" />
             </div>
-            <span className=" uppercase gradient-text leading-none   font-medium">
-              ruthatek.info
-            </span>
           </Link>
 
           <MainNav_sideButton showSearch={showSearch} setShowSearch={setShowSearch} />
