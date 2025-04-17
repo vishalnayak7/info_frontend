@@ -8,8 +8,9 @@ import React from 'react'
 
 export default function From_following_card({ data }) {
   return (
-    <div
-      className=' group w-full '
+    <Link
+      href={'/blog/' + data?.slug}
+      className=' group w-full  block'
     >
       <div className='  rounded-md  aspect-[16/9] relative overflow-hidden'>
         {
@@ -19,21 +20,22 @@ export default function From_following_card({ data }) {
         }
 
       </div>
-      <div className=' pt-3 md:pt-4'>
+
+      <div className=' pt-3 md:pt-4 w-full'>
         <Link href={'/blog/' + data?.slug} className=' line-clamp-3 font-manrope   text-[20px] md:text-[20px] tracking-[-0.03rem] leading-[120%] md:leading-[125%] group-hover:underline group-hover:underline-offset-2  dark:font-semibold font-bold text-blackish-600  group-hover:text-blueish-500 dark:text-whiteish-500    dark:group-hover:text-yellowish-500'>
           {data?.title}
         </Link>
 
-        <div className=' flex mt-2 md:mt-3 flex-row justify-between gap-3 items-center'>
+        <div className=' flex mt-2 md:mt-3 w-full flex-row justify-between gap-3 items-center'>
 
-          <div className=' bg-blackish-200/20 rounded-full overflow-hidden relative  size-[36px] md:size-[40px]'>
+          <div className=' bg-blackish-200/20 rounded-full overflow-hidden aspect-square relative  w-[36px] md:w-[40px]'>
             {
               data?.author?.avatar && <Image placeholder='blur' blurDataURL={data?.author?.avatar} src={data?.author?.avatar} alt={data?.title} fill={true} className=' aspect-square object-cover' quality={20} />
             }
 
           </div>
 
-          <div className='w-[calc(100%-37px)] md:w-[calc(100%-40px)] flex flex-col pt-1'>
+          <div className='w-[calc(100%-40px)] md:w-[calc(100%-50px)] flex flex-col pt-1'>
 
             <Link href={'/'} className='text-blackish-400 dark:text-whiteish-300/90  font-semibold hover:underline hover:underline-offset-2 leading-none text-[14px] relative md:text-[16px] font-manrope  group/author'>{data?.author?.username}
             
@@ -51,6 +53,6 @@ export default function From_following_card({ data }) {
           </div>
         </div>
       </div>
-    </div>
+    </Link>
   )
 }

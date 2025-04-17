@@ -7,7 +7,7 @@ export default function Swiper_Card({ data }) {
   return (
     <Link href={'/blog/' + data?.slug} className=' group relative  block  w-full h-full rounded-lg overflow-hidden  dark:bg-blackish-500 bg-whiteish-500 lg:bg-black'>
 
-      <div className='  relative w-full  aspect-[16/9] lg:aspect-auto  lg:h-[95%] z-0 '>
+      <div className='  relative w-full  aspect-[16/9]  z-0 '>
         {data?.thumbnail &&
           <IImage alt={data?.title} url={data?.thumbnail} quality={80} />
         }

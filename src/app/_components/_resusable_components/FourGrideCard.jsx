@@ -23,8 +23,8 @@ export default function FourGrideCard({ data }) {
                          {data?.title}
                     </Link>
 
-                    <div className=' flex   flex-row justify-between gap-3 items-center'>
-                         <div className=' bg-blackish-200/20 rounded-full overflow-hidden relative  size-[37px] md:size-[40px]'>
+                    <div className=' flex   flex-row justify-between gap-3 w-full items-center'>
+                         <div className=' bg-blackish-200/20 rounded-full aspect-square  overflow-hidden relative  w-[37px] md:w-[40px]'>
 
                               {data?.authorDetails?.avatar && (
                                    <Image
@@ -43,7 +43,7 @@ export default function FourGrideCard({ data }) {
 
                               <Link href={'/profile/' + data?.authorDetails?.username} className=' font-semibold hover:underline hover:underline-offset-2 leading-none text-[14px] relative md:text-[16px] text-blackish-400 dark:text-whiteish-300/90 font-manrope  group/author'>
                                    {data?.authorDetails?.username}
-                              
+
                                    <AuthorHoverCard data={data?.authorDetails} id={'1'}
                                         clx={' w-[300px] h-[200px] z-[110]'} />
 

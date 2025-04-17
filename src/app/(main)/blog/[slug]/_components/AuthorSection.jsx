@@ -9,7 +9,7 @@ export default function AuthorSection({ data }) {
      return (
           <>
                <div className=' flex mt-2 md:mt-3 flex-row justify-between gap-3 items-center'>
-                    <div className='bg-blackish-200/20  rounded-full overflow-hidden relative  size-[42px] md:size-[40px]'>
+                    <div className='bg-blackish-200/20  rounded-full overflow-hidden relative  aspect-square w-[42px] md:w-[40px]'>
                          {
                               data?.author?.avatar &&
                               <Image quality={20} placeholder='blur' blurDataURL={data?.author?.avatar} src={data?.author?.avatar} alt={data?.author?.username} fill={true} className=' object-cover aspect-square' />
