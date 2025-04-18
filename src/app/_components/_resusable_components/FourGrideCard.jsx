@@ -41,9 +41,9 @@ export default function FourGrideCard({ data }) {
                          </div>
                          <div className='w-[calc(100%-37px)] md:w-[calc(100%-40px)] flex flex-col pt-1'>
 
-                              <Link href={'/profile/' + data?.authorDetails?.username} className=' font-semibold hover:underline hover:underline-offset-2 leading-none text-[14px] relative md:text-[16px] text-blackish-400 dark:text-whiteish-300/90 font-manrope  group/author'>
+                              <Link href={'/profile/' + data?.authorDetails?.slug} className=' font-semibold hover:underline hover:underline-offset-2 leading-none text-[14px] relative md:text-[16px] text-blackish-400 dark:text-whiteish-300/90 font-manrope  group/author'>
                                    {data?.authorDetails?.username}
-
+                                   
                                    <AuthorHoverCard data={data?.authorDetails} id={'1'}
                                         clx={' w-[300px] h-[200px] z-[110]'} />
 

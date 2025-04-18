@@ -16,10 +16,7 @@ export default function LatestBlogsByTag({tag}) {
      const { data, isLoading, error } = useQuery({
           queryKey: ["TP_BAR_ONE_LATEST_BLOGS"],
           queryFn: () => gqlClient.request(TP_BAR_ONE_LATEST_BLOGS,{
-               tag: String(tag).replace(/-/g, " ").toLowerCase()
-                    .split(' ')
-                    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-                    .join(' ')
+               tag: String(tag) 
           }),
           staleTime: 1000 * 60 * 2,
      });

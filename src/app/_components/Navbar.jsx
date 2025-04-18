@@ -103,7 +103,7 @@ export default function Navbar() {
               <Image src="/images/Pruthatekinfologo.png" fill className=" w-full h-full" alt="Pruthatek" />
             </div>
           </Link>
-
+    
           <MainNav_sideButton showSearch={showSearch} setShowSearch={setShowSearch} />
 
         </div>

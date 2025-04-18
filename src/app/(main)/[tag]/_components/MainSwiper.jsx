@@ -18,22 +18,19 @@ import { useQuery } from '@tanstack/react-query';
 
 
 export default function MainSwiper({ tag }) {
-
-
+ 
 
      const fetchSliderData = async () => gqlClient.request(TP_SLIDER, {
-          tag: String(tag).replace(/-/g, " ").toLowerCase()
-               .split(' ')
-               .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-               .join(' ')
+          tag: String(tag) 
      });
+     
      const { data, isLoading } = useQuery({
           queryKey: ["TP_SLIDER"],
           queryFn: fetchSliderData,
-          staleTime: 1000 * 60 * 2, // Cache data for 2 minutes
+           
 
      });
-
+          
 
 
      const [activeIndex, setActiveIndex] = useState(0);

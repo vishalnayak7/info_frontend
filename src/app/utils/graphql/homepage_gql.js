@@ -12,6 +12,7 @@ export const HP_SPONSERD_BLOGS = gql`
     createdAt
     authorDetails {
       _id
+      slug
       avatar
       bio
       followers
@@ -28,6 +29,7 @@ query HomePageSlider {
     _id
     authorDetails {
       _id
+      slug
       username
     }
     createdAt
@@ -40,6 +42,7 @@ HomePageMostPopularBlogs {
     _id
     authorDetails {
       _id
+      slug
       username
     }
      subTitle
@@ -59,6 +62,7 @@ query HomePageLatestBlogsBar {
     _id
     authorDetails {
       _id
+      slug
       avatar
       bio
       followers
@@ -78,6 +82,7 @@ query HomePageHighestFiveBlogs_View_Bar {
     _id
     authorDetails {
       _id
+      slug
       avatar
       bio
       followers
@@ -99,6 +104,7 @@ query HomePageHighestFiveBlogs_Likes_Bar {
   _id
     authorDetails {
       _id
+      slug
       avatar
       bio
       followers

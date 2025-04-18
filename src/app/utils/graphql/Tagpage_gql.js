@@ -12,6 +12,7 @@ export const TP_SPONSERD_BLOGS = gql`
     createdAt
     authorDetails {
       _id
+      slug
       avatar
       bio
       followers
@@ -29,8 +30,11 @@ query TagPageSliderLeftSide($tag: String) {
     _id
     authorDetails {
       _id
+      slug
+      avatar
       username
     }
+    timeRequired
     createdAt
     subTitle
     slug
@@ -48,6 +52,7 @@ query TagPageLatestBlogsBar($tag: String) {
     _id
     authorDetails {
       _id
+      slug
       avatar
       bio
       followers

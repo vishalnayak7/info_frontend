@@ -17,10 +17,7 @@ export default function SponserdBlogs({ tag }) {
      const { data, isLoading, error } = useQuery({
           queryKey: ["TP_SPONSERD_BLOGS"],
           queryFn: () => gqlClient.request(TP_SPONSERD_BLOGS, {
-               tag: String(tag).replace(/-/g, " ").toLowerCase()
-                    .split(' ')
-                    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-                    .join(' ')
+               tag: String(tag) 
           }),
           staleTime: 1000 * 60 * 2,
      });

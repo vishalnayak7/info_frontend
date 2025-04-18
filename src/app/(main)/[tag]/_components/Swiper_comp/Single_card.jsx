@@ -1,23 +1,27 @@
-import AuthorHoverCard from '@/app/_components/_resusable_components/AuthorHoverCard'
+
 import IImage from '@/app/_components/_resusable_components/IImage'
+import { timeAgo } from '@/app/utils/BasicFunctions';
 import { ArrowUpRight, Dot } from 'lucide-react'
-import Image from 'next/image'
+
 import Link from 'next/link'
 import React from 'react'
 
 export default function Single_card({ data }) {
+
+     console.log(data);
+
      return (
-          <Link href={'/blog/'+data?.slug} className=' flex    flex-col lg:flex-row justify-between items-start   '>
+          <Link href={'/blog/' + data?.slug} className=' flex    flex-col lg:flex-row justify-between items-start   '>
                <div className=' w-full lg:w-[50%]   rounded-t-3xl lg:rounded-tr-none  lg:rounded-l-3xl  aspect-[16/9] lg:aspect-[16/11] relative overflow-hidden'>
                     {data?.thumbnail &&
                          <IImage alt={data?.title} url={data?.thumbnail} quality={80} />
                     }
 
                </div>
-                    
+
                <div className=' w-full lg:w-[50%] group  rounded-b-3xl lg:rounded-bl-none lg:rounded-r-3xl flex flex-col items-start justify-center  dark:bg-blackish-500 bg-gray-100   lg:aspect-[16/11] px-6  xl:px-10  py-4 md:py-8  lg:py-0 '>
 
-                    
+
                     <div className=" flex  mb-5 mt-3  xl:mb-6 flex-row flex-wrap gap-2">
                          {
                               ["react", "node", "ai"].map((item, index) => {
@@ -49,14 +53,14 @@ export default function Single_card({ data }) {
                          </div>
                          <div className='w-[calc(100%-37px)] md:w-[calc(100%-40px)] flex flex-col pt-1'>
 
-                              <Link href={'/'} className=' font-semibold hover:underline hover:underline-offset-2 leading-none text-[14px] relative md:text-[16px] text-blackish-400 dark:text-whiteish-300/90 font-manrope  group/author'>
+                              <Link href={'/profile/' + data?.authorDetails?.slug} className=' font-semibold hover:underline hover:underline-offset-2 leading-none text-[14px] relative md:text-[16px] text-blackish-400 dark:text-whiteish-300/90 font-manrope  group/author'>
                                    {data?.authorDetails?.username}
                               </Link>
-                              
+
                               <div className='leading-none flex  items-center  text-[12px] dark:text-whiteish-700 text-blackish-300  md:text-[14px] font-manrope gap-1'>
-                                   <span>2 days ago</span>
+                                   <span>{timeAgo(data?.createdAt)}</span>
                                    <Dot className=" " />
-                                   <span>6 min Read</span>
+                                   <span>{data?.timeRequired ? data?.timeRequired : '3'} min read</span>
                               </div>
 
                          </div>

@@ -8,9 +8,9 @@ export default function Headings({ title, subTitle, clx = ' w-full' }) {
                     <h2 className=' text-blue-600 dark:text-yellowish-500 text-[26px] md:text-[28px] capitalize leading-[125%] font-extrabold font-manrope'>
                          {title}
                     </h2>
-               </div>
+               </div>    
 
-               <p className='  text-blackish-200  dark:text-whiteish-700  tracking-[-0.01rem] font-sourceSarif leading-[125%] text-[14px] md:text-[18px]'>{subTitle}</p>
+               <p className='  pt-2 text-blackish-200  dark:text-whiteish-700  tracking-[-0.01rem] font-manrope leading-[125%] text-[14px] md:text-[18px]'>{subTitle}</p>
 
 
 

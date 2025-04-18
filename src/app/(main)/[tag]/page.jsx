@@ -1,14 +1,10 @@
 "use client"
-
 import Headings from '@/app/_components/_resusable_components/Headings';
-import { ArrowUpRight, Dot } from 'lucide-react';
-import Link from 'next/link';
+ 
 import { useParams } from 'next/navigation';
-import { useEffect, useState } from 'react';
+ 
 import ExploreNow from './_components/ExploreNow';
-import Image from 'next/image';
-import AuthorHoverCard from '@/app/_components/_resusable_components/AuthorHoverCard';
-import { BsStars } from 'react-icons/bs';
+ 
 import MainSwiper from './_components/MainSwiper';
 import SponserdBlogs from './_components/SponserdBlogs';
 import LatestBlogsByTag from './_components/LatestBlogsByTag';
@@ -32,14 +28,14 @@ const Tags_data = [
 
 export default function Page() {
      const { tag } = useParams();
-  
-     return (
+
+     return (  
           <div className="w-full">
                <div className="max-w-screen-2xl gap-10 lg:gap-28 py-10 md:py-16 w-[87%] md:w-[70%] lg:w-[85%] mx-auto">
                     <Headings clx=" " title={String(tag).toLocaleLowerCase().replace(/-/g, " ")} subTitle={""} />
-
+                         
                     <MainSwiper tag={tag} />
-          
+
                     <ExploreNow data={Tags_data} />
 
                     <LatestBlogsByTag tag={tag}/>
