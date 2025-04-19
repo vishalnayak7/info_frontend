@@ -90,12 +90,12 @@ export default function page() {
 
             </div>
 
-            <div className=" flex mt-8  bg-whiteish-500 dark:bg-blackish-400 flex-row  justify-start  items-start h-[220px]  rounded-lg">
+            {/* <div className=" flex mt-8  bg-whiteish-500 dark:bg-blackish-400 flex-row  justify-start  items-start h-[220px]  rounded-lg">
               <div className=" w-[25%] h-full border-r-2 border-white dark:border-blackish-700  ">a</div>
               <div className=" w-[25%] h-full border-r-2 border-white dark:border-blackish-700 ">a</div>
               <div className=" w-[25%] h-full border-r-2 border-white dark:border-blackish-700 ">a</div>
               <div className=" w-[25%] h-full ">a</div>
-            </div>
+            </div> */}
           </>
         }
 
