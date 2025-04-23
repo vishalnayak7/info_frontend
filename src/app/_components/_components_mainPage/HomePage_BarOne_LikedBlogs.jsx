@@ -1,22 +1,14 @@
-'use client'
+"use client"
 
 import Headings from '../_resusable_components/Headings'
-
-import { useQuery } from '@tanstack/react-query'
-import { gqlClient } from '../Wrapper'
-import { HP_BAR_THREE_LIKES_BAR } from '@/app/utils/graphql/homepage_gql'
-
 import FourGridLoadingCard from '../_resusable_components/FourGridLoadingCard'
 import FourGrideCard from '../_resusable_components/FourGrideCard'
+import { hp_bar_three_likes_bar_api } from '@/app/utils/apis/home_page'
 
 export default function HomePage_BarOne_LikedBlogs() {
 
-     const { data, isLoading, error } = useQuery({
-          queryKey: ["HP_BAR_THREE_LIKES_BAR"],
-          queryFn: () => gqlClient.request(HP_BAR_THREE_LIKES_BAR),
-          staleTime: 1000 * 60 * 2,
-     });
- 
+     const { data, isLoading  } = hp_bar_three_likes_bar_api();
+
      return (
           <>
                <div className=' '>
