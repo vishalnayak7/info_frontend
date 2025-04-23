@@ -31,7 +31,7 @@ export default function page() {
 
     validate: {
       email: (value) => (/^\S+@\S+$/.test(value) ? null : 'Invalid email'),
-      password: (value) => (value.length < 8 ? 'Password should be at least 8 characters' : null),
+      password: (value) => (value.length < 6 ? 'Password should be at least 8 characters' : null),
     },
   });
 
@@ -50,9 +50,7 @@ export default function page() {
         }),
       })
       let response = await request.json();
-
-
-
+ 
       if (response.status) {
         window.localStorage.setItem('PruthatekINFO_token', response.token);
 

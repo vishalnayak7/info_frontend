@@ -40,28 +40,30 @@ export default function Navbar() {
       }),
     })
     let response = await request.json();
+    
+    if (response.status == true) {
 
-    if (response.status) {
+      dispatch(setUserLoginStatus(true));
+      dispatch(setUserLoginDetails({
+        user_id: response.user_id,
+        username: response.username,
+        avatar: response.avatar,
+        accountType: response.accountType
+      }));
 
-      if (response.exp < Math.floor(Date.now() / 1000)) {
-        window.localStorage.removeItem('PruthatekINFO_token');
-        return;
-      } else {
-        dispatch(setUserLoginStatus(true));
-        dispatch(setUserLoginDetails({
-          user_id: response.user_id,
-          username: response.username,
-          avatar: response.avatar,
-          accountType: response.accountType
-        }));
-      }
 
     } else {
-
+      dispatch(setUserLoginDetails({
+        user_id: null,
+        username: null,
+        avatar: null,
+        accountType: null
+      }));
       window.localStorage.removeItem('PruthatekINFO_token');
     }
 
   }
+
 
   useEffect(() => {
     if (!is_user_logged_in) {
@@ -78,8 +80,6 @@ export default function Navbar() {
       setIsOpen(false);
     }, 150);
   };
-
-
 
 
 
@@ -103,7 +103,7 @@ export default function Navbar() {
               <Image src="/images/Pruthatekinfologo.png" fill className=" w-full h-full" alt="Pruthatek" />
             </div>
           </Link>
-    
+
           <MainNav_sideButton showSearch={showSearch} setShowSearch={setShowSearch} />
 
         </div>

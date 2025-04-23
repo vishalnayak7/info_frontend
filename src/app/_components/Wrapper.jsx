@@ -12,7 +12,7 @@ import { GraphQLClient } from "graphql-request";
 
 
 export const gqlClient  = new GraphQLClient(process.env.NEXT_PUBLIC_GRAPHQL_API);
-// export const gqlClient  = new GraphQLClient('https://beta.pokeapi.co/graphql/v1beta');
+ 
 export const queryClient = new QueryClient();
 
 export default function Wrapper({ children }) {
@@ -35,7 +35,7 @@ export default function Wrapper({ children }) {
 
                          <div className="w-full   flex flex-col justify-start items-center">
                               <Navbar />
-
+                                   
                               {children}
 
                               <Footer />
