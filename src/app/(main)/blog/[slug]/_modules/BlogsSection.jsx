@@ -61,7 +61,7 @@ export default function BlogsSection({ data, isLoading, error, slug }) {
                          <div className=" relative aspect-[16/9] mt-10 rounded-lg overflow-hidden">
                               {
                                    data?.getBlogBySlug?.thumbnail &&
-                                   <Image placeholder='blur' blurDataURL={data?.getBlogBySlug?.thumbnail} src={data?.getBlogBySlug?.thumbnail} alt={slug} fill={true} className=" object-cover" />
+                                   <Image placeholder='blur' blurDataURL={data?.getBlogBySlug?.thumbnail} src={data?.getBlogBySlug?.thumbnail} alt={slug} fill={true} className=" object-cover"  priority/>
                               }
                          </div>
 

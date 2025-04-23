@@ -15,6 +15,7 @@ export const gqlClient  = new GraphQLClient(process.env.NEXT_PUBLIC_GRAPHQL_API)
  
 export const queryClient = new QueryClient();
 
+
 export default function Wrapper({ children }) {
 
 
