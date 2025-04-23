@@ -97,6 +97,7 @@ query blogBySlug($slug: String!) {
     tags {
       _id
       name
+      slug
     }
     likes
     polls {

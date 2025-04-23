@@ -1,26 +1,14 @@
-import AuthorHoverCard from '@/app/_components/_resusable_components/AuthorHoverCard'
+
 import FourGrideCard from '@/app/_components/_resusable_components/FourGrideCard'
 import FourGridLoadingCard from '@/app/_components/_resusable_components/FourGridLoadingCard'
 import Headings from '@/app/_components/_resusable_components/Headings'
-import { gqlClient } from '@/app/_components/Wrapper'
-import { TP_SPONSERD_BLOGS } from '@/app/utils/graphql/Tagpage_gql'
-import { useQuery } from '@tanstack/react-query'
-import { Dot } from 'lucide-react'
-import Image from 'next/image'
-import Link from 'next/link'
-import React from 'react'
+import { SponserdBlogsApi } from '@/app/utils/apis/tag_page';
+ 
 import { BsStars } from 'react-icons/bs'
 
 export default function SponserdBlogs({ tag }) {
-
-
-     const { data, isLoading, error } = useQuery({
-          queryKey: ["TP_SPONSERD_BLOGS"],
-          queryFn: () => gqlClient.request(TP_SPONSERD_BLOGS, {
-               tag: String(tag) 
-          }),
-          staleTime: 1000 * 60 * 2,
-     });
+ 
+     const { data, isLoading, error } = SponserdBlogsApi({ tag });
 
      return (
           <>

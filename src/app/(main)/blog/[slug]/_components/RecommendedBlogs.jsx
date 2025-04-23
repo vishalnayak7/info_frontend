@@ -1,22 +1,12 @@
 import Headings from '@/app/_components/_resusable_components/Headings'
-
-import Reccomended_card from './singleCards/Reccomended_card'
 import From_following_card from './singleCards/From_following_card'
 import Skeleton from '@/app/_components/_resusable_components/Skeleton'
-import { useQuery } from '@tanstack/react-query';
+import { RelatedBlogsAPi } from '@/app/utils/apis/blog_page';
 
-import { gqlClient } from '@/app/_components/Wrapper';
-import { GetRelatedBlogsBySlug } from '@/app/utils/graphql/apis_gql';
 
 export default function RecommendedBlogs({ slug }) {
 
-     const { data, isLoading, error } = useQuery({
-          queryKey: ["GetRelatedBlogsBySlug"],
-          queryFn: () => gqlClient.request(GetRelatedBlogsBySlug, { slug: slug }),
-          enabled: !!slug,
-     });
-
-     
+     const { data, isLoading, error } = RelatedBlogsAPi({ slug })
 
      return (
           <div className=' border-t border-dashed    pb-10   border-blackish-300/50 dark:border-whiteish-300/50   w-full   mx-auto lg:w-full'>
@@ -28,7 +18,7 @@ export default function RecommendedBlogs({ slug }) {
                {isLoading ?
                     <LoadingUI />
                     :
-                    <div className=' w-full   grid mt-12  grid-cols-1  md:grid-cols-1 xl:grid-cols-2 gap-10 md:gap-8 xl:gap-10 xl:gap-y-12'>
+                    <div className=' w-full   grid mt-12  grid-cols-1  md:grid-cols-1 xl:grid-cols-2 gap-10 md:gap-8 xl:gap-10 xl:gap-y-5'>
                          {
                               data?.getRelatedBlogsBySlug?.map((item, index) => {
                                    return (

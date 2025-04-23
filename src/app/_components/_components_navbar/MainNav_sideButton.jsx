@@ -40,8 +40,8 @@ export default function MainNav_sideButton({ showSearch, setShowSearch }) {
                     is_user_logged_in ?
                          <>
                               <div className=' relative'>
-
-                                   <button   onBlur={() => { setisOpen(false) }} className={` absolute top-0 -right-1 rounded-2xl  bg-white shadow-lg  ${isOpen ? " scale-y-100    opacity-100" : " opacity-0 scale-y-0   "} duration-150  ease-in z-50 w-[300px] px-4 py-3  text-black origin-top-right flex flex-col justify-between`}>
+                    
+                                   <button   onBlur={() => { setisOpen(false) }} className={` absolute top-0 -right-1 rounded-2xl  bg-white shadow-lg  ${isOpen ? " scale-y-100    opacity-100" : " opacity-0 scale-y-0   "} duration-150  h-[300px]  ease-in z-50 w-[300px] px-4 py-3  text-black origin-top-right flex flex-col justify-between`}>
                                         <div className=' w-full  flex justify-between border-b border-blackish-200/40 pb-3 items-center'>
                                              <div className='  flex flex-row items-center gap-3'>
 

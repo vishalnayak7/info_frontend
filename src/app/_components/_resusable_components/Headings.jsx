@@ -10,7 +10,7 @@ export default function Headings({ title, subTitle, clx = ' w-full' }) {
                     </h2>
                </div>    
 
-               <p className='  pt-2 text-blackish-200  dark:text-whiteish-700  tracking-[-0.01rem] font-manrope leading-[125%] text-[14px] md:text-[18px]'>{subTitle}</p>
+               <p className='  pt-2 text-blackish-200  dark:text-whiteish-700    font-manrope font-medium  leading-[125%] text-[14px] tracking-wide md:text-[17px]'>{subTitle}</p>
 
 
 

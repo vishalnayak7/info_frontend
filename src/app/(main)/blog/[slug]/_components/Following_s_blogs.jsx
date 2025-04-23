@@ -1,23 +1,16 @@
-"use client"
 import Headings from '@/app/_components/_resusable_components/Headings'
-
-import React from 'react'
 import From_following_card from './singleCards/From_following_card'
 import Skeleton from '@/app/_components/_resusable_components/Skeleton'
-import { useQuery } from '@tanstack/react-query'
-import { gqlClient } from '@/app/_components/Wrapper'
-import {  GetTopBlogsByTopAuthor } from '@/app/utils/graphql/apis_gql'
+import { BlogsFromTopAuthorAPi } from '@/app/utils/apis/blog_page'
+
+
 
 export default function Following_s_blogs() {
 
 
-     const { data, isLoading, error } = useQuery({
-          queryKey: ["GetTopBlogsByTopAuthor"],
-          queryFn: () => gqlClient.request(GetTopBlogsByTopAuthor),
-     });
+     const { data, isLoading, error } = BlogsFromTopAuthorAPi()
 
-
-
+ 
 
      return (
           <div className=' border-t border-dashed  pb-10    border-blackish-300/50 dark:border-whiteish-300/50   w-full   mx-auto lg:w-full'>
@@ -26,12 +19,12 @@ export default function Following_s_blogs() {
 
                {isLoading ?
                     <LoadingUI />
-                    :
-                    <div className=' w-full space-y-8 mt-8'>
+                    :    
+                    <div className=' w-full   flex flex-col gap-5   mt-8'>
                          {
                               data?.getTopBlogsByTopAuthor?.map((item, index) => {
                                    return (
-                                        <From_following_card key={index} data={item} />
+                                        <From_following_card key={index} data={item} isComp={true} />
                                    )
                               })
                          }

@@ -17,12 +17,12 @@ export default function page() {
           queryFn: () => gqlClient.request(BLOG_BY_SLUG,{slug}),
           enabled: !!slug,
         });
-      
+        
      return (
           <div className=" w-full  ">
 
                <div className=" max-w-screen-2xl   gap-10 lg:gap-28  py-7 flex flex-col lg:flex-row justify-start items-start  w-[87%] md:w-[70%] lg:w-[85%] mx-auto">
-
+                         
                     <BlogsSection data={data} isLoading={isLoading} error={error} slug={slug}/>
                     <RightSide_Section data={data} isLoading={isLoading} error={error}/>
                </div>

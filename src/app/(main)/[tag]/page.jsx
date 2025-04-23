@@ -37,7 +37,7 @@ export default function Page() {
                     <MainSwiper tag={tag} />
 
                     <ExploreNow data={Tags_data} />
-
+          
                     <LatestBlogsByTag tag={tag}/>
                     <SponserdBlogs tag={tag}/>
                </div>

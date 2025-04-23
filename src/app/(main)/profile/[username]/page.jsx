@@ -2,12 +2,13 @@
 
 import AuthorHoverCard from "@/app/_components/_resusable_components/AuthorHoverCard"
 import FourGridLoadingCard from "@/app/_components/_resusable_components/FourGridLoadingCard"
+import Headings from "@/app/_components/_resusable_components/Headings"
 import IImage from "@/app/_components/_resusable_components/IImage"
 import Skeleton from "@/app/_components/_resusable_components/Skeleton"
 import { useBlogsByUserSlug, useUserBySlug } from "@/app/utils/apis/Profile_page"
 import { GET_USER_BY_SLUG } from "@/app/utils/graphql/profile_gql"
 import { Pagination } from "@mantine/core"
-import { ChevronRight, Dot } from "lucide-react"
+import { ChevronRight, Dot, Heading } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import { useParams } from "next/navigation"
@@ -33,7 +34,7 @@ export default function page() {
 
       <div className=" w-full   ">
 
-      
+
         <div className=" flex flex-row  font-medium capitalize font-manrope items-center flex-wrap justify-start text-blackish-600 dark:text-whiteish-700 gap-1 md:gap-2  text-[13px] md:text-[14px]">
 
           <Link href={'/'} className="   hover:underline hover:underline-offset-2   hover:text-blueish-500 dark:hover:text-yellowish-500">Home</Link>
@@ -51,11 +52,11 @@ export default function page() {
 
         {userLoading ?
           <>
-            <div className=" flex mt-8   flex-row  justify-start  items-start gap-16">
-              <div className="  overflow-hidden rounded-lg  w-[20%] aspect-square  relative">
+            <div className=" flex   mt-8   flex-col  lg:flex-row  justify-start  items-start  gap-8  xl:gap-16">
+              <div className="  overflow-hidden rounded-lg   w-[70%] mx-auto md:mx-0 lg:w-[30%] xl:w-[20%]  aspect-square  relative">
                 <Skeleton cls={' w-full h-full'} />
               </div>
-              <div className=" pt-2 space-y-4  w-[80%]">
+              <div className=" xl:pt-2   space-y-3 w-full lg:w-[70%] xl:w-[80%]">
 
                 <Skeleton cls={' w-1/2 h-12 '} />
 
@@ -77,14 +78,14 @@ export default function page() {
             </div>
           </> :
           <>
-            <div className=" flex mt-8   flex-row  justify-start  items-start gap-16">
-              <div className="  overflow-hidden rounded-lg  w-[20%] aspect-square  relative">
-
+            <div className=" flex   mt-8   flex-col  lg:flex-row  justify-start  items-start  gap-8  xl:gap-16">
+              <div className="  overflow-hidden rounded-lg    w-[70%] mx-auto md:mx-0 lg:w-[30%] xl:w-[20%] aspect-square  relative">
+          
                 <IImage url={user?.avatar} alt={username} />
 
               </div>
-              <div className=" pt-2  w-[80%]">
-                <h1 className=" text-[44px] text-blueish-500 dark:text-yellowish-500 font-Bebas tracking-wider font-[900] capitalize">{username}</h1>
+              <div className="  xl:pt-2   w-full lg:w-[70%] xl:w-[80%]">
+                <h1 className=" text-[44px] text-blueish-500 dark:text-yellowish-500 font-manrope font-[900] capitalize">{user?.username}</h1>
                 <p className="  text-[19px] font-medium font-manrope text-blackish-600 dark:text-whiteish-700">{user?.bio}</p>
               </div>
 
@@ -100,9 +101,8 @@ export default function page() {
         }
 
 
-
-        <div className=" flex pt-[120px]    flex-row  justify-start  items-start gap-16">
-          <h3 className=" leading-[30px] font-[900] capitalize text-[44px] tracking-wider font-Bebas">Latest From <span className=" text-blueish-500 dark:text-yellowish-500">{username}</span></h3>
+        <div className="  w-full pt-[120px]">
+          <Headings title={'Latest From ' + user?.username} subTitle={'Latest From ' + username} />
         </div>
 
 

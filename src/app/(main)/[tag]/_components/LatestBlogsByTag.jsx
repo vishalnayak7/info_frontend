@@ -1,26 +1,14 @@
-'use client'
- 
-import { useQuery } from '@tanstack/react-query'
- 
-  
-import { TP_BAR_ONE_LATEST_BLOGS } from '@/app/utils/graphql/Tagpage_gql'
 import Headings from '@/app/_components/_resusable_components/Headings'
-import { gqlClient } from '@/app/_components/Wrapper'
 import FourGridLoadingCard from '@/app/_components/_resusable_components/FourGridLoadingCard'
 import FourGrideCard from '@/app/_components/_resusable_components/FourGrideCard'
-
- 
-export default function LatestBlogsByTag({tag}) {
+import { LatestBlogsByTagApi } from '@/app/utils/apis/tag_page'
 
 
-     const { data, isLoading, error } = useQuery({
-          queryKey: ["TP_BAR_ONE_LATEST_BLOGS"],
-          queryFn: () => gqlClient.request(TP_BAR_ONE_LATEST_BLOGS,{
-               tag: String(tag) 
-          }),
-          staleTime: 1000 * 60 * 2,
-     });
+export default function LatestBlogsByTag({ tag }) {
 
+
+     const { data, isLoading, error } = LatestBlogsByTagApi({ tag });
+     
 
      return (
           <>

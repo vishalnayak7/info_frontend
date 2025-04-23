@@ -36,7 +36,7 @@ export default function BlogsSection({ data, isLoading, error, slug }) {
                               {
                                    data?.getBlogBySlug?.tags?.map((item, index) => {
                                         return (
-                                             <Link key={index} href={`/${item?.name}`} className=" flex flex-row items-center gap-1  text-[13px] md:text-[16px] capitalize   md:px-3 px-1.5 py-0.5 pb-0.5 md:pb-1 leading-[120%] rounded-md bg-whiteish-500 dark:bg-blackish-400 dark:text-whiteish-600   ">
+                                             <Link key={index} href={`/${item?.slug}`} className=" flex flex-row items-center gap-1  text-[13px] md:text-[16px] capitalize   md:px-3 px-1.5 py-0.5 pb-0.5 md:pb-1 leading-[120%] rounded-md bg-whiteish-500 dark:bg-blackish-400 dark:text-whiteish-600   ">
                                                   <span>{item?.name}</span>
                                                   <ArrowUpRight className=" size-[12px] md:size-[14px] " strokeWidth={1.5} />
                                              </Link>

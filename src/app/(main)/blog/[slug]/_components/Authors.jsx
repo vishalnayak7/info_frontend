@@ -1,19 +1,14 @@
-"use client"
-
+ 
 import Headings from '@/app/_components/_resusable_components/Headings'
 import Author_card from './singleCards/Author_card'
-import { GET_TOP_AUTHOR_OF_WEEK } from '@/app/utils/graphql/apis_gql';
-import { useQuery } from '@tanstack/react-query';
-import { gqlClient } from '@/app/_components/Wrapper';
+ 
+import { TopAuthorAPi } from '@/app/utils/apis/blog_page';
 
 export default function Authors() {
 
-     const { data, isLoading, error } = useQuery({
-          queryKey: ["GET_TOP_AUTHOR_OF_WEEK"],
-          queryFn: () => gqlClient.request(GET_TOP_AUTHOR_OF_WEEK),
-     });
+     const { data, isLoading, error } = TopAuthorAPi();
 
- 
+
      return (
           <div className=' border-t border-dashed  pb-10     border-blackish-300/50 dark:border-whiteish-300/50   w-full   mx-auto lg:w-full'>
 
@@ -38,7 +33,7 @@ export default function Authors() {
                          )
                }
 
- 
+
           </div>
      )
 }

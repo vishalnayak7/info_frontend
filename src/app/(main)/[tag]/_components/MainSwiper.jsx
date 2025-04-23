@@ -23,7 +23,7 @@ export default function MainSwiper({ tag }) {
      const fetchSliderData = async () => gqlClient.request(TP_SLIDER, {
           tag: String(tag) 
      });
-     
+
      const { data, isLoading } = useQuery({
           queryKey: ["TP_SLIDER"],
           queryFn: fetchSliderData,
@@ -31,7 +31,7 @@ export default function MainSwiper({ tag }) {
 
      });
           
-
+     
 
      const [activeIndex, setActiveIndex] = useState(0);
      const [swiperInstance, setSwiperInstance] = useState(null); // Store Swiper instance
