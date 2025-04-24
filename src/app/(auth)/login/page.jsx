@@ -12,9 +12,12 @@ import { notifications } from '@mantine/notifications';
 import { useRouter } from 'next/navigation';
 import { useDispatch, useSelector } from 'react-redux';
 import { setUserLoginDetails, setUserLoginStatus } from '@/app/utils/Redux/slices/HomePage.slice';
+import { useAuthRedirect } from '../useAuthRedirect';
 
 export default function page() {
 
+  useAuthRedirect();
+      
   const [loading, setLoading] = useState(false);
   const router = useRouter();
 
@@ -69,7 +72,7 @@ export default function page() {
         })
         router.push('/');
       } else {
-
+        
         dispatch(setUserLoginStatus(false));
         dispatch(setUserLoginDetails({
           username: '',

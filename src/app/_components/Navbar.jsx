@@ -29,7 +29,7 @@ export default function Navbar() {
     if (!token) {
       return;
     }
-
+    
     let request = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_API}/v1/auth/verify`, {
       method: 'POST',
       headers: {
@@ -71,6 +71,8 @@ export default function Navbar() {
     }
   }, [is_user_logged_in]);
 
+
+
   const handleMouseEnter = () => {
     setIsOpen(true);
   };
@@ -90,7 +92,7 @@ export default function Navbar() {
       tags: ["Trending", "AI", "Entertainment", "Tech", "Homes", "Education", "Money", "Wellness", "Home", "Deals", "Gift Guide", "Cover Stories"]
     }),
   });
-
+  
   return (
     <div onMouseLeave={handleMouseLeave} className=" w-full    sticky  top-0 z-[200]">
 

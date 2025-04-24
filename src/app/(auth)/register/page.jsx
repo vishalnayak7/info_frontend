@@ -8,8 +8,10 @@ import React, { useState } from 'react'
 
 import Image from 'next/image';
 import Link from 'next/link';
+import { useAuthRedirect } from '../useAuthRedirect';
 
 export default function page() {
+  useAuthRedirect();
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState('')
   const form = useForm({

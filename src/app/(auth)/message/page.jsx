@@ -5,7 +5,7 @@ export default function page() {
           <div className=' p-16'>
 
                Email sent for verification please check you email
-
+          
           </div>
      )
 }
