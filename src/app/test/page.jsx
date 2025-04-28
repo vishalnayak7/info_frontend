@@ -1,11 +1,12 @@
 import React from 'react'
-import Skeleton from '../_components/_resusable_components/Skeleton'
 
 export default function page() {
      return (
-          <div className='  dark:text-white w-full space-y-2 py-5'>
+          <div className=' w-full  h-[80vh]  bg-white dark:bg-blackish-600 flex justify-center items-center '>
+                    
+                <div className=' size-[90px] border-[5px] animate-spin rounded-full border-b-white dark:border-b-blackish-600 border-blackish-400 dark:border-whiteish-400'>
 
-              texting
+                </div>
 
           </div>
      )

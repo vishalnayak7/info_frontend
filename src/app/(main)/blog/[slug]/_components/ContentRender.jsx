@@ -1,4 +1,4 @@
-import parse from "html-react-parser";
+import parseer from 'html-react-parser'
 import { Checkbox } from "@mantine/core";
 import { removeNbsp } from "@/app/utils/BasicFunctions";
 
@@ -6,7 +6,7 @@ export default function ContentRender({ content }) {
      const data = JSON.parse(content || "[]");
 
      const parseWithLinkStyle = (html) =>
-          parse(removeNbsp(html), {
+          parseer(removeNbsp(html), {
                replace: (domNode) => {
                     if (domNode.name === "a" && domNode.attribs?.href) {
                          return (

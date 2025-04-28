@@ -10,36 +10,7 @@ export default function SwiperMainBlogs() {
 
   return (
     <>
-      <button
-        className="bg-red-600"
-        onClick={async () => {
-          const token = window.localStorage.getItem('PruthatekINFO_token');
-
-          if (!token) {
-            console.log('No token found');
-            return;
-          }
-          
-          // Decode without verifying
-          const decoded =  jwt.decode(token );
-
-          if (!decoded) {
-            console.log('Token is invalid');
-          }
-
-          const currentTime = Math.floor(Date.now() / 1000); // in seconds
-
-          if (decoded.exp && decoded.exp < currentTime) {
-            console.log('Token is expired');
-          } else {
-            console.log('Token is valid');
-          }
-
-          console.log('Decoded Token:', decoded);
-        }}
-      >
-        Check Token
-      </button>
+    
 
 
       {
