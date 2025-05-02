@@ -34,13 +34,13 @@ export default function SponserdBlogsHome() {
                {/* // loading cards */}
                {
                     isLoading &&
-                    <FourGridLoadingCard num={4}/>
+                    <FourGridLoadingCard num={4} />
                }
-          
+
                {
                     !isLoading && data?.HomePageSponserd_Blogs.length != 0 &&
 
-                    <div className='  w-full md:w-[80%] mx-auto lg:w-full grid   mt-4 grid-cols-1  md:grid-cols-2 xl:grid-cols-4 gap-12 md:gap-8 xl:gap-6'>
+                    <section className='  w-full md:w-[80%] mx-auto lg:w-full grid   mt-4 grid-cols-1  md:grid-cols-2 xl:grid-cols-4 gap-12 md:gap-8 xl:gap-6'>
                          {
                               data?.HomePageSponserd_Blogs?.map((item, index) => {
                                    return (
@@ -48,7 +48,7 @@ export default function SponserdBlogsHome() {
                                    )
                               })
                          }
-                    </div>
+                    </section>
 
                }
           </>

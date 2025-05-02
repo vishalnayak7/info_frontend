@@ -54,7 +54,7 @@ export default function AuthoreSection() {
                          (
                               error ? <p>Error: {error.message} </p>
                                    :
-                                   <div className='  w-full md:w-[80%] mx-auto lg:w-full grid  grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-8'>
+                                   <section className='  w-full md:w-[80%] mx-auto lg:w-full grid  grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-8'>
                                         {
                                              data?.getTopAuthorOfWeek?.map((item, index) => {
                                                   return (
@@ -62,7 +62,7 @@ export default function AuthoreSection() {
                                                   )
                                              })
                                         }
-                                   </div>
+                                   </section>
                          )
                }
 

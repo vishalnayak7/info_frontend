@@ -117,8 +117,7 @@ export default function page() {
     window.location.href = `${process.env.NEXT_PUBLIC_BACKEND_API}/v1/auth/google/auth`
   }
 
-  console.log(process.env.NEXT_PUBLIC_BACKEND_API)
-
+   
   return (
 
     <BoxWrapper>

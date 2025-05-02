@@ -38,7 +38,7 @@ export default function HomePage_BarOne_LatestBlogs() {
                {
                     !isLoading && data?.HomePageLatestBlogsBar.length != 0 &&
 
-                    <div className='  w-full md:w-[80%] mx-auto lg:w-full grid mt-12  grid-cols-1  md:grid-cols-2 xl:grid-cols-4 gap-12 md:gap-8 xl:gap-6'>
+                    <section className='  w-full md:w-[80%] mx-auto lg:w-full grid mt-12  grid-cols-1  md:grid-cols-2 xl:grid-cols-4 gap-12 md:gap-8 xl:gap-6'>
                          {
                               data?.HomePageLatestBlogsBar?.map((item, index) => {
                                    return (
@@ -46,7 +46,7 @@ export default function HomePage_BarOne_LatestBlogs() {
                                    )
                               })
                          }
-                    </div>
+                    </section>
 
                }
           </>

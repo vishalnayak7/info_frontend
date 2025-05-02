@@ -63,7 +63,10 @@ export default function page() {
     }
 
   }
-  
+  async function googleAuthHandler() {
+
+    window.location.href = `${process.env.NEXT_PUBLIC_BACKEND_API}/v1/auth/google/auth`
+  }
   return (
 
     <BoxWrapper>
@@ -77,7 +80,7 @@ export default function page() {
             </div>
             :
             <>
-  
+
 
               <div className='  w-full   md:w-[65%] lg:w-[40%]'>
 
@@ -89,14 +92,16 @@ export default function page() {
                   </div>
 
 
+                  {/* // google button */}
                   <div className=' flex w-full justify-center items-center'>
-                    <button type='button' onClick={() => { alert('hello') }} className='px-2.5 py-2.5   rounded-full duration-300  flex flex-row w-fit gap-5 items-center'>
+                    <button type='button' onClick={googleAuthHandler} className='px-2.5 py-2.5   rounded-full duration-300  flex flex-row w-fit gap-5 items-center'>
                       <div className=' size-[30px] relative'>
                         <Image src={'/images/google.svg'} fill alt='google' className=' object-contain' />
                       </div>
                       <span className=' font-medium font-manrope  text-[17px]'>Continue with Google</span>
                     </button>
                   </div>
+              
                   <p className='font-manrope  text-[17px] py-2 text-blackish-200  text-center'>or </p>
                   <TextInput
                     classNames={{
