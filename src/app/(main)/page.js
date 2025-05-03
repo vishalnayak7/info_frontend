@@ -1,9 +1,11 @@
-import AuthoreSection from "../_components/_components_mainPage/AuthoreSection";
-import HomePage_BarOne_LatestBlogs from "../_components/_components_mainPage/HomePage_BarOne_LatestBlogs";
-import HomePage_BarOne_LikedBlogs from "../_components/_components_mainPage/HomePage_BarOne_LikedBlogs";
-import HomePage_BarOne_ViewBased from "../_components/_components_mainPage/HomePage_BarOne_ViewBased";
-import SponserdBlogsHome from "../_components/_components_mainPage/SponserdBlogsHome";
-import SwiperMainBlogs from "../_components/_components_mainPage/SwiperMainBlogs";
+import dynamic from "next/dynamic";
+
+const SwiperMainBlogs = dynamic(() => import("../_components/_components_mainPage/SwiperMainBlogs"));
+const HomePage_BarOne_LikedBlogs = dynamic(() => import("../_components/_components_mainPage/HomePage_BarOne_LikedBlogs"));
+const HomePage_BarOne_ViewBased = dynamic(() => import("../_components/_components_mainPage/HomePage_BarOne_ViewBased"));
+const HomePage_BarOne_LatestBlogs = dynamic(() => import("../_components/_components_mainPage/HomePage_BarOne_LatestBlogs"));
+const AuthoreSection = dynamic(() => import("../_components/_components_mainPage/AuthoreSection"));
+const SponserdBlogsHome = dynamic(() => import("../_components/_components_mainPage/SponserdBlogsHome"));
 
 
 export default async function Home() {
@@ -15,9 +17,9 @@ export default async function Home() {
 
   return (
     <div className=" w-full  ">
- 
+
       <div className=" max-w-screen-2xl   py-10  md:py-16   w-[87%] md:w-[85%] mx-auto">
-        
+
         <SwiperMainBlogs />
         {/* 
         <Categoryvise_blogs />
@@ -29,7 +31,7 @@ export default async function Home() {
         <AuthoreSection />
         <SponserdBlogsHome />
 
-          
+
 
       </div>
     </div>

@@ -11,7 +11,7 @@ export const HomeSlice = createSlice({
                avatar: '',
                accountType: ''
           },
-
+          
      },
      reducers: {
 
@@ -22,6 +22,7 @@ export const HomeSlice = createSlice({
           setUserLoginDetails: (state, action) => {
 
                state.user_data = {
+                    user_id: action.payload.user_id,
                     username: action.payload.username,
                     avatar: action.payload.avatar,
                     accountType: action.payload.accountType

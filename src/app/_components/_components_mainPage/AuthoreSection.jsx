@@ -29,7 +29,7 @@ export default function AuthoreSection() {
                               [0, 2, 23].map(e => (<div key={e} className=' group '>
 
                                    <Skeleton cls={'relative rounded-full h-[100px] aspect-square '} />
-
+                                   
 
                                    <div className=' pt-3 space-y-2'>
                                         <Skeleton cls={'relative rounded-md w-full h-6 aspect-square '} />
@@ -54,7 +54,7 @@ export default function AuthoreSection() {
                          (
                               error ? <p>Error: {error.message} </p>
                                    :
-                                   <section className='  w-full md:w-[80%] mx-auto lg:w-full grid  grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-8'>
+                                   <section className='  w-full md:w-[80%] mx-auto lg:w-full grid  grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-12'>
                                         {
                                              data?.getTopAuthorOfWeek?.map((item, index) => {
                                                   return (

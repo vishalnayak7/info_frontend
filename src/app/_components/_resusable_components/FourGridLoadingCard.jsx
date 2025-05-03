@@ -5,7 +5,7 @@ export default function FourGridLoadingCard({ num = 8 }) {
 
      let arr = Array.from({ length: num }, (_, i) => i)
      return (
-          <div className='  w-full md:w-[80%] mx-auto lg:w-full grid mt-12  grid-cols-1  md:grid-cols-2 xl:grid-cols-4 gap-10 md:gap-8 xl:gap-6'>
+          <div className='  w-full mx-auto lg:w-full grid mt-16 grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-10 md:gap-8 xl:gap-6'>
                {
                     arr.map((item, index) => {
                          return (

@@ -32,6 +32,7 @@ export const GET_TOP_AUTHOR_OF_WEEK = gql`
     _id
     username
     avatar
+    slug
     bio
     followers
   }

@@ -1,10 +1,14 @@
+"use client"
 import Sidebar from "./Sidebar";
 import Navbar from "./Navbar";
-
-
+ 
 export default function DashWrapper({ children }) {
+
+
+
      return (
           <div className=" w-full flex  flex-row justify-between items-start ">
+
 
                <Sidebar />
 
@@ -15,6 +19,7 @@ export default function DashWrapper({ children }) {
                     </div>
 
                </div>
+
           </div>
      )
 }

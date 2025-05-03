@@ -1,13 +1,15 @@
 
 
+import { setUserLoginDetails, setUserLoginStatus } from '@/app/utils/Redux/slices/HomePage.slice';
 import { BookmarkSimple, SquaresFour, PencilSimple, UserPlus, Megaphone, SignOut, Info } from '@phosphor-icons/react/dist/ssr'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useDispatch } from 'react-redux';
 
 
 export default function Sidebar() {
 
-
+  const dispatch = useDispatch();
 
   return (
     <div className=' p-2 pb-4 w-[300px] flex flex-col justify-between  h-screen border-r border-blackish-100 '>
@@ -19,9 +21,9 @@ export default function Sidebar() {
       <div>
 
       </div>
+        
 
 
-      
       <div className=''>
         {sliderLink.map((item, index) => (
           <Link key={index} href={item.link} className={` text-blackish-200/70  hover:bg-blackish-100/30 duration-300 rounded-xl flex flex-row items-center gap-4 px-4 py-3 `}>
@@ -44,7 +46,17 @@ export default function Sidebar() {
           </span>
 
         </Link>
-        <button className=' w-full text-red-500  hover:bg-red-100/50 duration-300 rounded-xl flex flex-row items-center gap-4 px-4 py-3'>
+
+
+
+        <button
+          onClick={() => {
+            dispatch(setUserLoginStatus(false));
+            dispatch(setUserLoginDetails({ user_id: '', username: '', avatar: '', accountType: '' }));
+            window.localStorage.removeItem('PruthatekINFO_token');
+            window.location.replace('/');
+          }}
+          className=' w-full text-red-500  hover:bg-red-100/50 duration-300 rounded-xl flex flex-row items-center gap-4 px-4 py-3'>
           <SignOut size={30} weight='regular' />
 
           <span className={` font-inter font-medium  text-[17px]`}>

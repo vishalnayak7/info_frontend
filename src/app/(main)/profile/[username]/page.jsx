@@ -13,6 +13,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { useParams } from "next/navigation"
 import { useState } from "react"
+import HeaderSectionOfAuthor from "./_components/HeaderSectionOfAuthor"
 
 export default function page() {
 
@@ -52,44 +53,10 @@ export default function page() {
 
         {userLoading ?
           <>
-            <div className=" flex   mt-8   flex-col  lg:flex-row  justify-start  items-start  gap-8  xl:gap-16">
-              <div className="  overflow-hidden rounded-lg   w-[70%] mx-auto md:mx-0 lg:w-[30%] xl:w-[20%]  aspect-square  relative">
-                <Skeleton cls={' w-full h-full'} />
-              </div>
-              <div className=" xl:pt-2   space-y-3 w-full lg:w-[70%] xl:w-[80%]">
-
-                <Skeleton cls={' w-1/2 h-12 '} />
-
-                <Skeleton cls={' w-full h-6 '} />
-                <Skeleton cls={' w-full h-6 '} />
-                <Skeleton cls={' w-3/2 h-6 '} />
-                <Skeleton cls={' w-1/2 h-6 '} />
-
-              </div>
-
-            </div>
-
-            <div className=" flex mt-8 gap-1  bg-whiteish-500 dark:bg-blackish-400 flex-row  justify-start  items-start h-[220px]  rounded-lg">
-              <Skeleton cls={" w-[25%] h-full    "} />
-              <Skeleton cls={" w-[25%] h-full   "} />
-              <Skeleton cls={" w-[25%] h-full   "} />
-              <Skeleton cls={" w-[25%] h-full   "} />
-
-            </div>
+            loading
           </> :
           <>
-            <div className=" flex   mt-8   flex-col  lg:flex-row  justify-start  items-start  gap-8  xl:gap-16">
-              <div className="  overflow-hidden rounded-lg    w-[70%] mx-auto md:mx-0 lg:w-[30%] xl:w-[20%] aspect-square  relative">
-          
-                <IImage url={user?.avatar} alt={username} />
-
-              </div>
-              <div className="  xl:pt-2   w-full lg:w-[70%] xl:w-[80%]">
-                <h1 className=" text-[44px] text-blueish-500 dark:text-yellowish-500 font-manrope font-[900] capitalize">{user?.username}</h1>
-                <p className="  text-[19px] font-medium font-manrope text-blackish-600 dark:text-whiteish-700">{user?.bio}</p>
-              </div>
-
-            </div>
+         
 
             {/* <div className=" flex mt-8  bg-whiteish-500 dark:bg-blackish-400 flex-row  justify-start  items-start h-[220px]  rounded-lg">
               <div className=" w-[25%] h-full border-r-2 border-white dark:border-blackish-700  ">a</div>
@@ -97,8 +64,14 @@ export default function page() {
               <div className=" w-[25%] h-full border-r-2 border-white dark:border-blackish-700 ">a</div>
               <div className=" w-[25%] h-full ">a</div>
             </div> */}
+  
+            <HeaderSectionOfAuthor data={user} />
+
           </>
         }
+
+
+        
 
 
         <div className="  w-full pt-[120px]">
@@ -145,3 +118,20 @@ export default function page() {
     </div>
   )
 }
+
+
+/*
+
+followers , following
+
+
+follow button,
+
+// links from the user like insta
+
+
+joining date in 4 cards
+
+
+
+*/

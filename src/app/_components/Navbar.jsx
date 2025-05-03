@@ -42,7 +42,7 @@ export default function Navbar() {
     let response = await request.json();
     
     if (response.status == true) {
-
+       
       dispatch(setUserLoginStatus(true));
       dispatch(setUserLoginDetails({
         user_id: response.user_id,

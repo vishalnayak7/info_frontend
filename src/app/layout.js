@@ -1,6 +1,8 @@
 import { Nunito, Source_Serif_4, Manrope, Inter, Bebas_Neue } from "next/font/google";
 import "./globals.css";
 import '@mantine/notifications/styles.css';
+import Wrapper from "./_components/Wrapper";
+
 
 // Font Imports 
 const source4 = Source_Serif_4({ variable: "--font-SourceSarif4", subsets: ["latin"] });
@@ -15,7 +17,11 @@ export default function RootLayout({ children }) {
           <html lang="en" className="scrollBarMain">
 
                <body className={`  dark:bg-[#10100f] dark:text-[#fff] bg-[#fffffff5] text-[#10100f]  ${nunito.variable}  ${inter.variable}   ${source4.variable} ${manrope.variable} ${bebas.variable}   antialiased`}>
-                    {children}
+                    <Wrapper>
+
+                         {children}
+                    </Wrapper>
+
                </body>
           </html>
      );
