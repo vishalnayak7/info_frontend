@@ -9,4 +9,4 @@ export default function layout({ children }) {
                <DashWrapper>{children}</DashWrapper>
           </div>
      )
-}
+}    

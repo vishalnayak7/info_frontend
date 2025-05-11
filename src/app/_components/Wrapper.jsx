@@ -33,7 +33,7 @@ export default function Wrapper({ children }) {
           <MantineProvider theme={theme}>
                <QueryClientProvider client={queryClient}>
                     <Provider store={Store}>
- 
+                    
                          {children}
                               
                          <Notifications />

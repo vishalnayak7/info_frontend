@@ -139,3 +139,33 @@ body {
       transform: rotate(360deg);
   }
   } 
+
+
+
+  /* EDITOR CSS */
+  .ce-block__content h1 {
+    font-weight: bold;
+    font-size: 32px;
+}
+
+.ce-block__content h2 {
+    font-weight: bold;
+    font-size: 26px;
+}
+
+.ce-block__content h3 {
+    font-size: 21px;
+    font-weight: bold;
+}
+
+.ce-block__content p {
+    font-size: 10px;
+}
+
+.ce-paragraph {
+    font-size: 18px;
+}
+
+.cdx-list__item {
+    font-size: 18px;
+}

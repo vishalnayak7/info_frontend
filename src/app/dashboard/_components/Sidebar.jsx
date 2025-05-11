@@ -12,7 +12,7 @@ export default function Sidebar() {
   const dispatch = useDispatch();
 
   return (
-    <div className=' p-2 pb-4 w-[300px] flex flex-col justify-between  h-screen border-r border-blackish-100 '>
+    <div className=' p-2  pb-4 w-[300px] flex flex-col justify-between  h-screen border-r border-blackish-100 '>
       {/* <Link href="/" className=" mt-2 ml-3 font-manrope text-xl flex flex-row items-center">
         <div className=" relative w-[170px]  h-[15px] md:w-[220px]  md:h-[20px] bottom-[-0.5px] right-[0.5px] ">
           <Image src="/images/PruthatekinfologoBlack.png" fill className=" w-full h-full" alt="Pruthatek" />
@@ -21,7 +21,7 @@ export default function Sidebar() {
       <div>
 
       </div>
-        
+
 
 
       <div className=''>
@@ -73,28 +73,28 @@ export default function Sidebar() {
 const sliderLink = [
   {
     name: "Dashboard",
-    link: "/",
+    link: "/dashboard",
     icon: <SquaresFour size={30} weight='regular' />
   },
   {
     name: "Bookmarks",
-    link: "/bookmarks",
+    link: "/dashboard/bookmark",
     icon: < BookmarkSimple size={28} weight='regular' />
 
   },
   {
-    name: "Create Article",
-    link: "/create",
+    name: "Your Articals",
+    link: "/dashboard/articals",
     icon: < PencilSimple size={28} weight='regular' />
   },
   {
     name: "Followings",
-    link: "/logout",
+    link: "/dashboard/following",
     icon: <UserPlus size={30} weight='regular' />
   },
   {
     name: "Advertise",
-    link: "/ads",
+    link: "/dashboard/ads",
     icon: <Megaphone size={28} weight='regular' />
   }
 ]

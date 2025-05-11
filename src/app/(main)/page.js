@@ -31,8 +31,6 @@ export default async function Home() {
         <AuthoreSection />
         <SponserdBlogsHome />
 
-
-
       </div>
     </div>
   );

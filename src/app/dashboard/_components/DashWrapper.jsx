@@ -12,9 +12,9 @@ export default function DashWrapper({ children }) {
 
                <Sidebar />
 
-               <div className=" w-full  px-2">
+               <div className=" w-full  flex flex-col  justify-between   px-2">
                     <Navbar />
-                    <div>
+                    <div className=" w-full h-full overflow-auto ">
                          {children}
                     </div>
 
