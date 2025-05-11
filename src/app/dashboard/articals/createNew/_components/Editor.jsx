@@ -3,10 +3,12 @@ import EditorJS from "@editorjs/editorjs";
 import Header from "@editorjs/header";
 import List from "@editorjs/list";
 import { useEffect } from "react";
- 
+
 export default function Editor({ setEditorContent }) {
 
      useEffect(() => {
+          if (typeof window === "undefined") return;
+
           const editor = new EditorJS({
                holder: 'editorjs',
                tools: {
@@ -34,7 +36,7 @@ export default function Editor({ setEditorContent }) {
                editor.destroy; // Cleanup
           };
      }, [setEditorContent]);
-     
+
 
      // ===================================================
      // let editorID = document.getElementById('editorjs');

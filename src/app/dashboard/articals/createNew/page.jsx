@@ -5,13 +5,17 @@ import { Button, TextInput } from '@mantine/core';
 import { useForm } from '@mantine/form';
 import { useState } from 'react'
 import ImageUploading from 'react-images-uploading';
-import Editor from './_components/Editor';
+// import Editor from './_components/Editor';
 import { notifications } from '@mantine/notifications';
 
 import { useRouter } from 'next/navigation'
 import { queryClient } from '@/app/_components/Wrapper';
 import { uploadFile } from '@/utils/HelperFunctions';
 import { useSelector } from 'react-redux';
+import dynamic from 'next/dynamic';
+
+const Editor = dynamic(() => import('./_components/Editor'), { ssr: false });
+
 export default function page() {
 
   const { user_data } = useSelector(state => state.HomeSlice)
